@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 391 Assignment 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div>
+            <p class="eyebrow">CSE 391 - Assignment 2</p>
+            <h1>JavaScript Programming</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="panel" aria-labelledby="stopwatch-title">
+            <div class="section-heading">
+                <span class="task-number">2</span>
+                <div>
+                    <h2 id="stopwatch-title">Stopwatch</h2>
+                    <p>Counts by 3 seconds and stops at 30 seconds.</p>
+                </div>
+            </div>
+
+            <div class="stopwatch-display" id="stopwatch-display">0</div>
+
+            <div class="button-row">
+                <button id="start-button" type="button">Start</button>
+                <button id="stop-button" type="button">Stop</button>
+                <button id="reset-button" type="button">Reset</button>
+            </div>
+        </section>
+
+        <section class="panel" aria-labelledby="todo-title">
+            <div class="section-heading">
+                <span class="task-number">3</span>
+                <div>
+                    <h2 id="todo-title">To-Do List</h2>
+                    <p>Add, complete, delete, and save tasks with localStorage.</p>
+                </div>
+            </div>
+
+            <form class="todo-form" id="todo-form">
+                <label for="todo-input">New task</label>
+                <input id="todo-input" type="text" placeholder="Write a task">
+                <button type="submit">Add Task</button>
+            </form>
+
+            <ul class="todo-list" id="todo-list"></ul>
+        </section>
+
+        <section class="fortune-section" aria-labelledby="fortune-title">
+            <div class="section-heading centered-heading">
+                <span class="task-number">1</span>
+                <div>
+                    <h2 id="fortune-title">Fortune Generator</h2>
+                    <p>A random fortune appears every time the page loads.</p>
+                </div>
+            </div>
+
+            <div class="fortune-area">
+                <div class="fortune-box" id="fortune-box">
+                    <p id="fortune-text"></p>
+                </div>
+
+                <div class="color-buttons" aria-label="Fortune style controls">
+                    <button class="style-button style-blue" type="button" data-theme="blue">Blue</button>
+                    <button class="style-button style-green" type="button" data-theme="green">Green</button>
+                    <button class="style-button style-red" type="button" data-theme="red">Red</button>
+                    <button class="style-button style-purple" type="button" data-theme="purple">Purple</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

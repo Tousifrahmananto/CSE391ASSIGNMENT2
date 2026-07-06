@@ -1,0 +1,65 @@
+============================================================
+           AI USAGE DECLARATION
+============================================================
+
+Name: Tousif Rahman Anto
+Student ID: 24241226
+Assignment: 2
+Date: 7/6/26
+
+------------------------------------------------------------
+1. AI TOOLS USED (check all that apply)
+------------------------------------------------------------
+[ ] None
+[x] ChatGPT
+[ ] GitHub Copilot
+[ ] Google Gemini
+[ ] Claude
+[ ] Cursor
+[ ] Other: ________________
+
+------------------------------------------------------------
+2. PURPOSE OF AI USE (check all that apply)
+------------------------------------------------------------
+[x] Learning/understanding concepts
+[x] Debugging my code
+[x] Generating code snippets
+[ ] Writing text content
+[x] Design/styling ideas
+[ ] Image generation
+[ ] Other: ________________
+
+------------------------------------------------------------
+3. DESCRIPTION OF AI USE
+------------------------------------------------------------
+Briefly describe what you used AI for and how:
+
+I used AI assistance to understand the assignment requirements, organize the HTML, CSS and JavaScript files, review JavaScript behavior, and improve the page styling and color contrast. I also used it to check that the stopwatch, fortune generator and to-do list features matched the assignment requirements. I reviewed the final code and understand how the submitted work functions.
+
+
+
+
+------------------------------------------------------------
+4. AI-ASSISTED SECTIONS
+------------------------------------------------------------
+List specific files/sections where AI helped significantly:
+
+File: index.html        Section: Page structure for fortune generator, stopwatch, and to-do list
+File: styles.css        Section: Layout, spacing, buttons, and contrasting quote box styles
+File: script.js         Section: Random fortune display, stopwatch logic, and local Storage to-do list behavior
+
+------------------------------------------------------------
+5. DECLARATION
+------------------------------------------------------------
+I declare that:
+- This disclosure is complete and accurate
+- I understand all code in my submission
+- I can explain and modify my work if asked
+- I take full responsibility for my submission
+
+Signature: Tousif Rahman Anto
+Date: 7/6/26
+
+============================================================
+Save as: docs/AI_Declaration.txt
+============================================================
