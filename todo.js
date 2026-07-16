@@ -60,6 +60,19 @@ function deleteTask(taskId) {
     renderTasks();
 }
 
+function editTask(taskId, newText) {
+    tasks = tasks.map(function (task) {
+        if (task.id === taskId) {
+            task.text = newText;
+        }
+
+        return task;
+    });
+
+    saveTasks();
+    renderTasks();
+}
+
 function saveTasks() {
     localStorage.setItem("cse391Tasks", JSON.stringify(tasks));
 }
@@ -72,6 +85,7 @@ function renderTasks() {
         var listItem = document.createElement("li");
         var checkbox = document.createElement("input");
         var taskText = document.createElement("span");
+        var editButton = document.createElement("button");
         var deleteButton = document.createElement("button");
 
         listItem.className = "todo-item";
@@ -88,6 +102,13 @@ function renderTasks() {
         taskText.className = "todo-text";
         taskText.textContent = task.text;
 
+        editButton.className = "edit-button";
+        editButton.type = "button";
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", function () {
+            showEditControls(listItem, task);
+        });
+
         deleteButton.className = "delete-button";
         deleteButton.type = "button";
         deleteButton.textContent = "Delete";
@@ -97,7 +118,55 @@ function renderTasks() {
 
         listItem.appendChild(checkbox);
         listItem.appendChild(taskText);
+        listItem.appendChild(editButton);
         listItem.appendChild(deleteButton);
         list.appendChild(listItem);
     });
+}
+
+function showEditControls(listItem, task) {
+    listItem.innerHTML = "";
+
+    var editInput = document.createElement("input");
+    var saveButton = document.createElement("button");
+    var cancelButton = document.createElement("button");
+
+    listItem.className = "todo-item editing";
+
+    editInput.className = "edit-input";
+    editInput.type = "text";
+    editInput.value = task.text;
+
+    saveButton.className = "save-button";
+    saveButton.type = "button";
+    saveButton.textContent = "Save";
+    saveButton.addEventListener("click", function () {
+        var newText = editInput.value.trim();
+
+        if (newText !== "") {
+            editTask(task.id, newText);
+        }
+    });
+
+    cancelButton.className = "cancel-button";
+    cancelButton.type = "button";
+    cancelButton.textContent = "Cancel";
+    cancelButton.addEventListener("click", function () {
+        renderTasks();
+    });
+
+    editInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            saveButton.click();
+        }
+
+        if (event.key === "Escape") {
+            renderTasks();
+        }
+    });
+
+    listItem.appendChild(editInput);
+    listItem.appendChild(saveButton);
+    listItem.appendChild(cancelButton);
+    editInput.focus();
 }

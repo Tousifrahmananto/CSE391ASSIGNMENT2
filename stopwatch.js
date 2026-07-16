@@ -12,15 +12,15 @@ function setupStopwatch() {
 }
 
 function startStopwatch() {
-    if (stopwatchId !== null || stopwatchValue >= 30) {
+    if (stopwatchId !== null || stopwatchValue >= 10) {
         return;
     }
 
     stopwatchId = setInterval(function () {
-        stopwatchValue += 3;
+        stopwatchValue += 2;
         updateStopwatchDisplay();
 
-        if (stopwatchValue >= 30) {
+        if (stopwatchValue >= 10) {
             stopStopwatch();
         }
     }, 1000);

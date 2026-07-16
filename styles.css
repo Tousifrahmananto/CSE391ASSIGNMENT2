@@ -169,6 +169,34 @@ button:hover {
     text-decoration: line-through;
 }
 
+.edit-button {
+    background: #287271;
+}
+
+.edit-button:hover {
+    background: #1d4f4e;
+}
+
+.save-button {
+    background: #1b4965;
+}
+
+.save-button:hover {
+    background: #0f2f44;
+}
+
+.cancel-button {
+    background: #6c757d;
+}
+
+.cancel-button:hover {
+    background: #4b5359;
+}
+
+.edit-input {
+    flex: 1;
+}
+
 .delete-button {
     background: #b42318;
 }
@@ -212,11 +240,22 @@ button:hover {
 
 .color-buttons {
     display: grid;
+    grid-template-columns: repeat(2, 96px);
     gap: 10px;
 }
 
 .style-button {
     width: 96px;
+}
+
+.previous-button {
+    grid-column: 1 / -1;
+    width: 100%;
+    background: #2f3e46;
+}
+
+.previous-button:hover {
+    background: #1f2a30;
 }
 
 .style-blue {
@@ -254,5 +293,9 @@ button:hover {
 
     .style-button {
         width: 120px;
+    }
+
+    .previous-button {
+        width: 100%;
     }
 }

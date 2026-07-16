@@ -11,6 +11,8 @@ var fortunes = [
     "A confident beginning is already half of progress."
 ];
 
+var currentFortuneIndex = 0;
+
 var fortuneThemes = {
     blue: {
         color: "#ffffff",
@@ -45,11 +47,28 @@ var fortuneThemes = {
 document.addEventListener("DOMContentLoaded", function () {
     showRandomFortune();
     setupFortuneButtons();
+    setupPreviousFortuneButton();
 });
 
 function showRandomFortune() {
-    var randomIndex = Math.floor(Math.random() * fortunes.length);
-    document.getElementById("fortune-text").textContent = fortunes[randomIndex];
+    currentFortuneIndex = Math.floor(Math.random() * fortunes.length);
+    showFortuneByIndex();
+}
+
+function showFortuneByIndex() {
+    document.getElementById("fortune-text").textContent = fortunes[currentFortuneIndex];
+}
+
+function setupPreviousFortuneButton() {
+    document.getElementById("previous-fortune-button").addEventListener("click", function () {
+        currentFortuneIndex--;
+
+        if (currentFortuneIndex < 0) {
+            currentFortuneIndex = fortunes.length - 1;
+        }
+
+        showFortuneByIndex();
+    });
 }
 
 function setupFortuneButtons() {
